@@ -202,7 +202,7 @@
   <div class="header">
     <div class="header-eyebrow">Community Event</div>
     <h1>Screenshot Contest</h1>
-    <p class="header-sub">Dragon's Dogma — Cast your vote for the finest capture in the realm</p>
+    <p class="header-sub">Dogma Rising Screenshot Contest</p>
     <div class="dragon-sep">⸻ ⚔ ⸻</div>
   </div>
 
@@ -225,8 +225,8 @@
     <div class="card">
       <h2>Identify yourself, Arisen</h2>
       <div class="name-row">
-        <div class="field"><label>Character first name</label><input type="text" id="firstName" placeholder="e.g. Arisen" maxlength="40" autocomplete="off"></div>
-        <div class="field"><label>Character last name</label><input type="text" id="lastName" placeholder="e.g. Voss" maxlength="40" autocomplete="off"></div>
+        <div class="field"><label>Character first name</label><input type="text" id="firstName" placeholder="e.g. Lost" maxlength="40" autocomplete="off"></div>
+        <div class="field"><label>Character last name</label><input type="text" id="lastName" placeholder="e.g. MyLeg" maxlength="40" autocomplete="off"></div>
       </div>
       <p style="font-size:14px;color:var(--text-dim);font-style:italic;margin-bottom:6px;">You may cast <strong style="color:var(--gold-light);font-style:normal;">one vote per category</strong> — one for Unmodded and one for Modded.</p>
       <div class="vpn-note"><div class="vpn-dot checking" id="vpnDot"></div><span id="vpnText">Verifying your network…</span></div>
@@ -286,7 +286,6 @@
         <div class="field" style="margin-bottom:10px;"><label>Password</label><input type="password" id="adminPass" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doAdminLogin()"></div>
         <div id="adminLoginStatus" class="status"></div>
         <button class="btn" onclick="doAdminLogin()">Enter the sanctum</button>
-        <p style="font-size:12px;color:var(--text-dimmer);margin-top:10px;font-style:italic;">Default: <code>dragon2024</code> — change ADMIN_PASSWORD in source.</p>
       </div>
     </div>
 
@@ -461,7 +460,7 @@ create policy "public update settings" on settings for update using (true);</pre
 
 <script>
 // ── CHANGE THIS ──
-const ADMIN_PASSWORD = 'dragon2024';
+const ADMIN_PASSWORD = 'correcthorsebatterystaple';
 const CATEGORIES = ['unmodded','modded'];
 
 // ── SUPABASE ──
