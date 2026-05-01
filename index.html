@@ -1540,6 +1540,10 @@ create policy "public update settings" on settings for update using (true);</pre
 const ADMIN_PASSWORD = 'correcthorsebatterystaple';
 const CATEGORIES = ['unmodded','modded'];
 
+// ── HARDCODED SUPABASE CREDENTIALS (safe to commit — anon key is public) ──
+const SUPABASE_URL = 'https://uujdrrbnkozxcholtuen.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1amRycmJua296eGNob2x0dWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2MDIyMzIsImV4cCI6MjA5MzE3ODIzMn0.9DWgW-pwSteWZiJwTSxOn0Jctgpp45l7-ioSTvcdJu4';
+
 // ── SUPABASE ──
 let sb = null;
 function initSupabase(url,key){sb=supabase.createClient(url,key);}
@@ -2170,8 +2174,10 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 // ── INIT ──
 async function init(){
   const cfg=loadSbConfig();
-  if(cfg&&cfg.url&&cfg.key){
-    initSupabase(cfg.url,cfg.key);
+  const sbUrl=SUPABASE_URL||cfg?.url;
+  const sbKey=SUPABASE_KEY||cfg?.key;
+  if(sbUrl&&sbKey){
+    initSupabase(sbUrl,sbKey);
     showLoading('Loading the realm…');
     const[ok]=await Promise.all([dbFetchAll(),initDiscordSession()]);
     hideLoading();
