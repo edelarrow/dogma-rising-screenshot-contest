@@ -1887,7 +1887,6 @@ function renderCategoryGrid(cat,fn,ln){
     return`<div class="shot-card${sel?' selected':''}${isMyVote?' voted-for':''}" onclick="selectEntry('${cat}','${e.id}')">
       ${sel?'<span class="sel-badge">Selected</span>':''}
       ${isMyVote?'<span class="your-vote-badge">Your vote</span>':''}
-      <span class="vote-badge">${vc}</span>
       <div class="img-wrap">${e.img_url?`<img src="${e.img_url}" alt="${e.title}" onclick="openLightbox(event,'${e.img_url}')">`:'<span class="ph">📷</span>'}</div>
       <div class="card-body"><div class="entry-title">${e.title}</div>${e.submitter?`<div class="entry-sub">by ${e.submitter}</div>`:''}</div>
     </div>`;
